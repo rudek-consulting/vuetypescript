@@ -1,0 +1,5 @@
+/node_modules
+/*.js
+/test/unit/coverage/
+/target
+/node

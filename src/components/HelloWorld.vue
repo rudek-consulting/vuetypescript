@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br />
+      AAAAA For a guide and recipes on how to configure / customize this
+      project,<br />
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
         >vue-cli documentation</a
@@ -112,11 +113,22 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { DummyService } from '@/services/dummy.service';
 
-@Component
-export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
-}
+export default Vue.extend({
+  created() {
+    console.log('Hier bin ich...');
+    console.log(`p1 = ${this.$store.state.mod1.p1}`);
+    this.$store.direct.dispatch.mod1.loadP1({ id: 'neuer Wert' });
+    console.log(`p1 = ${this.$store.state.mod1.p1}`);
+
+    const service = new DummyService();
+    service.changeStoreValue();
+    console.log(`direct= ${service.getFromStore()}`);
+    service.changeStoreValueOriginal();
+    console.log(`original= ${service.getFromStore()}`);
+  }
+});
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

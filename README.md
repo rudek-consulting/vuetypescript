@@ -32,6 +32,15 @@ Vue CLI v4.4.6
 - Datei `.eslintignore` anlegen
 - Datei `.prettierrc.js` anlegen
 
+"include": [
+"srv/*.ts",
+"src/**/*.ts",
+"src/**/*.tsx",
+"src/**/*.vue",
+"tests/**/*.ts",
+"tests/**/*.tsx"
+],
+
 ## Project setup
 
 ```
@@ -59,3 +68,9 @@ npm run lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Vuex
+
+```
+npm install direct-vuex
+```
